@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Burger Bom</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+<header class="topo">
+    <div class="topo-info">
+        <h1>🍔 Burger Bom</h1>
+        <p>Delivery rápido • Qualidade premium</p>
+        <button onclick="document.getElementById('cardapio').scrollIntoView()">Ver Cardápio</button>
+    </div>
+</header>
+
+<main>
+
+<section id="cardapio">
+    <h2>🍔 Cardápio</h2>
+
+<div class="item">
+    <img src="./img/hamburguer-de-queijo-classico-com-costeleta-de-carne-legumes-e-cebola-isolados-em-um-fundo-branco_123827-29709.webp">
+    <h3>Burger queijo Clássico</h3>
+    <p>costeleta de carne, queijo, legumes e cebola</p>
+    <strong>R$ 24,90</strong>
+
+    <div class="controle">
+        <button onclick="remover('classico', 24.9)">−</button>
+        <span id="qtd-classico">0</span>
+        <button onclick="adicionar('classico', 24.9)">+</button>
+    </div>
+</div>
+
+<div class="item">
+    <img src="./img/77XTHHCCLBEXLC2Y5RK4PN37CE.webp">
+    <h3>Burger Basico</h3>
+    <p>carne e queijo</p>
+    <strong>R$ 29,90</strong>
+
+    <div class="controle">
+        <button onclick="remover('bacon', 29.9)">−</button>
+        <span id="qtd-bacon">0</span>
+        <button onclick="adicionar('bacon', 29.9)">+</button>
+    </div>
+</div>
+
+    <h2>🥤 Bebidas</h2>
+
+<div class="item">
+    <img src="./img/REFRIGERANTE-COCA-COLA-VD-1L-RETORNAVEL.webp">
+    <h3>coca 1L</h3>
+    <p>Lata 350ml</p>
+    <strong>R$ 9,00</strong>
+
+    <div class="controle">
+        <button onclick="remover('refri', 9)">−</button>
+        <span id="qtd-refri">0</span>
+        <button onclick="adicionar('refri', 9)">+</button>
+    </div>
+</div>
+</section>
+
+<section class="carrinho">
+    <h2>🛒 Carrinho</h2>
+    <p>Total: <strong>R$ <span id="total">0.00</span></strong></p>
+    <a id="whats" target="_blank">
+        <button class="whats">Pedir no WhatsApp</button>
+    </a>
+</section>
+
+<section class="entrega">
+    <h2>📍 Área de Entrega</h2>
+    <p>Centro • Zona Norte • Zona Sul</p>
+    <p>⏰ 18h às 23h</p>
+</section>
+
+</main>
+
+<footer>
+    <p>🍔 Burger Bom © 2025</p>
+    <p>Pagamento: Pix • Cartão • Dinheiro</p>
+</footer>
+
+<script>
+let total = 0;
+let itens = {
+    classico: 0,
+    bacon: 0,
+    refri: 0
+};
+
+function adicionar(item, valor) {
+    itens[item]++;
+    total += valor;
+    atualizar(item);
+}
+
+function remover(item, valor) {
+    if (itens[item] > 0) {
+        itens[item]--;
+        total -= valor;
+        atualizar(item);
+    }
+}
+
+function atualizar(item) {
+    document.getElementById("qtd-" + item).innerText = itens[item];
+    document.getElementById("total").innerText = total.toFixed(2);
+    atualizarWhats();
+}
+
+function atualizarWhats() {
+    let mensagem = "🍔 *Pedido Burger Bom*%0A%0A";
+
+    if (itens.classico > 0)
+        mensagem += `• Burger Clássico: ${itens.classico}x%0A`;
+
+    if (itens.bacon > 0)
+        mensagem += `• Burger Básico: ${itens.bacon}x%0A`;
+
+    if (itens.refri > 0)
+        mensagem += `• Coca 1L: ${itens.refri}x%0A`;
+
+    mensagem += `%0A💰 *Total: R$ ${total.toFixed(2)}*`;
+
+    // COLOQUE SEU NÚMERO AQUI (com DDI 55)
+    let telefone = "5587999606256";
+
+    let link = `https://wa.me/${telefone}?text=${mensagem}`;
+    document.getElementById("whats").href = link;
+}
+</script>
+
+
+</body>
+</html>
