@@ -1,0 +1,200 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f2f2f2;
+}
+
+/* LOGIN */
+.login-body {
+    min-height: 100vh;
+    background:#FFD700 ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-card {
+    background: #fff;
+    padding: 35px;
+    width: 100%;
+    max-width: 350px;
+    border-radius: 20px;
+    text-align: center;
+}
+
+.login-card input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 10px;
+}
+
+.login-card button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 20px;
+    background: #e60000;
+    color: #fff;
+    cursor: pointer;
+    margin-top: 5px;
+}
+
+.secundario {
+    background: #888;
+}
+
+.hidden {
+    display: none;
+}
+
+.login-card .secundario {
+    background-color: #888 !important; /* cinza */
+    color: white !important;
+}
+
+/* TOPO */
+.hero {
+    background: #ffcc00;
+    padding: 30px;
+    text-align: center;
+}
+
+.logout {
+    margin-top: 10px;
+    padding: 8px 18px;
+    border: none;
+    border-radius: 20px;
+    background: #000;
+    color: #fff;
+    cursor: pointer;
+}
+
+/* CONTEÚDO */
+.container {
+    padding: 20px;
+}
+
+.produto {
+    background: #fff;
+    padding: 20px;
+    border-radius: 15px;
+}
+.produto img {
+    width: 120px;      /* tamanho certo */
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+    margin-left: 100px;
+}
+.controle button {
+    background-color: #e60000 !important;
+    color: white !important;
+    border: none !important;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    font-size: 20px;
+    cursor: pointer;
+
+    appearance: none;
+    -webkit-appearance: none;
+}
+.whats {
+    width: 100%;
+    background-color: #25D366 !important;
+    color: white !important;
+
+    border: none !important;
+    border-radius: 30px;
+
+    padding: 18px;
+    font-size: 18px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    appearance: none;
+    -webkit-appearance: none;
+}
+.whats:active {
+    background-color: #1ebe5d;
+}
+.total {
+    text-align: center;   /* fica no meio */
+    font-size: 22px;      /* maior */
+    margin-bottom: 15px;  /* espaço pro botão */
+}
+
+.total strong {
+    font-size: 26px;      /* valor maior */
+    color: #e60000;
+}
+.controle span {
+    font-size: 22px;   /* tamanho do número */
+    font-weight: bold;
+    min-width: 30px;
+    text-align: center;
+}
+.entrega {
+    text-align: center;
+    font-size: 18px;
+    margin-bottom: 8px;
+}
+
+textarea {
+    width: 100%;
+    height: 70px;
+    border-radius: 15px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    margin: 10px 0 15px;
+    resize: none;
+}
+select {
+    width: 100%;
+    padding: 12px;
+    border-radius: 15px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    margin-bottom: 10px;
+    background: white;
+}
+.categoria {
+    font-size: 24px;
+    margin: 30px 0 15px 0;
+    text-align: center;
+    color: #e60000; /* vermelho do app */
+}
+
+.entrega, .total {
+    text-align: center;
+    font-size: 18px;
+    margin-bottom: 8px;
+}
+
+textarea, select {
+    width: 100%;
+    border-radius: 15px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    margin-bottom: 10px;
+    resize: none;
+}
+
+.whats {
+    width: 100%;
+    background: #25D366;
+    color: white;
+    border: none;
+    padding: 18px;
+    border-radius: 30px;
+    font-size: 18px;
+    cursor: pointer;
+}
